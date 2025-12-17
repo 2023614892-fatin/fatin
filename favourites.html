@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel= "stylesheet" href="style.css">
+	<title>Favourites</title>
+</head>
+<style>
+	.favourites-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.fav-title {
+    font-size: 32px;
+    color: #2b3a67;
+    margin-bottom: 40px;
+}
+
+.fav-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.fav-box {
+    background: #ffbfd1;
+    padding: 30px;
+    border-radius: 25px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.fav-box:hover {
+    transform: translateY(-8px) scale(1.05);
+    background: #ffa4c2;
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+    display: block;
+    margin: auto;
+    max-width: 70%;
+    max-height: 80%;
+    margin-top: 80px;
+    border-radius: 20px;
+}
+
+.close {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+nav a {
+    position: relative;
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background: pink;
+    transition: 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+</style> 
+<body>
+	<h1><b> Fatin's Personal Website</b></h1>
+
+	<nav>
+		<a href= "index.html">Home</a>
+		<a href= "aboutme.html">About Me</a>
+		<a href= "family.html">Family</a>
+		<a href= "education.html">Education</a>
+		<a href="experience.html">Experience</a>
+		<a href= "friends.html">Friends</a>
+		<a href= "favourites.html">Favourites</a>
+		<a href= "gallery.html"> Gallery</a>
+	</nav>
+
+	<div class="content">
+		<h2>💗 ALL ABOUT MY FAVOURITES THINGS 💗</h2>
+	</div>
+
+    <div class="fav-container">
+    <div class="fav-box" onclick="openImageModal('images/food.jpg')">
+        🍔 Favourite Food & Drinks
+    </div>
+
+    <div class="fav-box" onclick="openImageModal('images/song.jpg')">
+        🎵 Favourite Song
+    </div>
+
+    <div class="fav-box" onclick="openImageModal('images/band.jpg')">
+        🎸 Favourite Band
+    </div>
+
+    <div class="fav-box" onclick="openImageModal('images/movie.jpg')">
+        🎬 Favourite Movie
+    </div>
+
+    <div class="fav-box" onclick="openVideoModal('videos/singer2.MP4')">
+        🎤 Favourite Singer
+    </div>
+
+    <div class="fav-box" onclick="openImageModal('images/animal.jpg')">
+        🐱 Favourite Animal
+    </div>
+</div>
+
+<!-- Modal untuk image -->
+<div id="imageModal" class="modal">
+    <span class="close" onclick="closeImageModal()">&times;</span>
+    <img class="modal-content" id="modalImg">
+</div>
+
+<!-- Modal untuk video -->
+<div id="videoModal" class="modal">
+    <span class="close" onclick="closeVideoModal()">&times;</span>
+    <video class="modal-content" id="modalVideo" controls>
+        Your browser does not support HTML5 video.
+    </video>
+</div>
+
+<script>
+function openImageModal(src) {
+    const modal = document.getElementById("imageModal");
+    const img = document.getElementById("modalImg");
+    img.src = src;
+    modal.style.display = "block";
+}
+
+function closeImageModal() {
+    const modal = document.getElementById("imageModal");
+    modal.style.display = "none";
+}
+
+function openVideoModal(src) {
+    const modal = document.getElementById("videoModal");
+    const video = document.getElementById("modalVideo");
+    video.src = src;
+    video.style.display = "block";
+    video.play();
+    modal.style.display = "block";
+}
+
+function closeVideoModal() {
+    const modal = document.getElementById("videoModal");
+    const video = document.getElementById("modalVideo");
+    video.pause();
+    video.currentTime = 0;
+    modal.style.display = "none";
+}
+</script>
+
+
+<!-- MODAL -->
+<div id="favModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImg">
+</div>
+
+	<div class="content">
+		<p><em>This section is about keeping all MY favourite picks in one place</em></p> 
+	</div>
+
+	<footer class="footer"> 
+		<p>&copy; 2025 Designed for educational purposes | Fatin Nabilla Binti Zamri</p>
+	</footer>
+
+	<script>
+function openModal(imageSrc) {
+    document.getElementById("favModal").style.display = "block";
+    document.getElementById("modalImg").src = imageSrc;
+}
+
+function closeModal() {
+    document.getElementById("favModal").style.display = "none";
+}
+</script>
+
+
+</body>
+</html> 

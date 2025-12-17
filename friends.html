@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel= "stylesheet" href="style.css">
+	<title>Friends</title>
+</head>
+<style>
+.friends-container {
+    width: 65%;
+    margin:auto;
+    text-align: center;
+}
+
+.section-title {
+    background-color: #f7a9b8;
+    padding: 15px;
+    border-radius: 20px;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.friend-section {
+    background-color: #f8c8dc;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.friend-section h3 {
+    color: #ff1a8c;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* susunan 3 gambar sebaris */
+.image-row {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    margin-bottom: 7px;
+    width: 100%;
+}
+
+.friend-img {
+    width: 30%;
+    max-width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+}
+
+/* efek zoom bila hover */
+.friend-img:hover {
+    transform: scale(1.05);
+}
+
+.friend-section p {
+    font-size: 17px;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/*container animation*/ 
+/* BUANG animation auto */
+.friends-container {
+    opacity: 1;
+    transform: none;
+}
+
+.friends-container img {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* bila container ditekan */
+.friends-container.active img {
+    animation: imgFadeUp 0.8s ease-in forwards;
+}
+
+/* delay untuk setiap gambar */
+.friends-container.active img:nth-child(1) {
+    animation-delay: 0.1s;
+}
+.friends-container.active img:nth-child(2) {
+    animation-delay: 0.3s;
+}
+.friends-container.active img:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+@keyframes imgFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.friends-container {
+    cursor: pointer;
+}
+
+nav a {
+    position: relative;
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background: pink;
+    transition: 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+</style>
+
+<body>
+	<h1><b> Fatin's Personal Website</b></h1>
+
+	<nav>
+		<a href= "index.html">Home</a>
+		<a href= "aboutme.html">About Me</a>
+		<a href= "family.html">Family</a>
+		<a href= "education.html">Education</a>
+		<a href="experience.html">Experience</a>
+		<a href= "friends.html">Friends</a>
+		<a href= "favourites.html">Favourites</a>
+		<a href= "gallery.html"> Gallery</a>
+	</nav>
+
+	<div class="content">
+		<h2>❤️ PEOPLE WHO WARM MY SOUL ❤️</h2>
+	</div>
+
+<div class="friends-container">
+
+    <!-- PRIMARY SCHOOL FRIENDS -->
+    <div class="friend-section">
+    <h3>👧 Primary School Friends</h3>
+        <div class="image-row">
+            <img src="images/primary1.jpg" class="friend-img" alt="Primary school friend 1">
+            <img src="images/primary2.jpg" class="friend-img" alt="Primary school friend 2">
+            <img src="images/primary3.jpg" class="friend-img" alt="Primary school friend 3">
+        </div>
+    <p>Friends who have been with me since the early school days, full of sweet and funny memories.</p>
+    <p style="font-size:14px;">click to view picture 📸</p>
+</div>
+
+    <!-- SECONDARY SCHOOL FRIENDS -->
+    <div class="friend-section">
+        <h3>👩‍🦱 Secondary School Friends</h3>
+        <div class="image-row">
+            <img src="images/secondary1.jpg" class="friend-img" alt="Secondary school friend 1">
+            <img src="images/secondary2.jpg" class="friend-img" alt="Secondary school friend 2">
+            <img src="images/secondary3.jpg" class="friend-img" alt="Secondary school friend 3">
+        </div>
+        <p>The teenage years full of laughter, challenges, and strong friendships.</p>
+         <p style="font-size:14px;">click to view picture 📸</p>
+    </div>
+
+    <!-- UNIVERSITY FRIENDS -->
+    <div class="friend-section">
+        <h3>🎓 University Friends</h3>
+        <div class="image-row">
+            <img src="images/friends5.jpg" class="friend-img" alt="University friend 1">
+            <img src="images/university2.jpg" class="friend-img" alt="University friend 2">
+            <img src="images/university3.jpg" class="friend-img" alt="University friend 3">
+        </div>
+        <p>Friends who supported me through assignments, presentations, and the journey to adulthood.</p>
+         <p style="font-size:14px;">click to view picture 📸</p>
+    </div>
+
+    <!-- CHILDHOOD FRIENDS -->
+    <div class="friend-section">
+        <h3>🌟 Childhood Friends</h3>
+        <div class="image-row">
+            <img src="images/childhood1.jpg" class="friend-img" alt="Childhood friend 1">
+            <img src="images/childhood2.jpg" class="friend-img" alt="Childhood friend 2">
+            <img src="images/childhood3.jpg" class="friend-img" alt="Childhood friend 3">
+        </div>
+        <p>Friends who have grown up with me since childhood and are like family.</p>
+         <p style="font-size:14px;">click to view picture 📸</p>
+    </div>
+
+</div> 
+
+	<div class="content">
+		<p><em>My friends are one of the greatest blessings in my life. We have shared so many unforgettable memories together 
+    from laughing until our stomachs hurt, supporting each other through challenges, and celebrating every small victory.
+    <br><br>
+    Each of them inspires me in different ways, and I am grateful to have people who always bring positivity, strength, 
+    and happiness into my life. No matter how busy or far we are, our friendship remains strong. I hope our bond lasts 
+    for many more years to come.</em></p> 
+	</div>
+
+	<footer class="footer"> 
+		<p>&copy; 2025 Designed for educational purposes | Fatin Nabilla Binti Zamri</p>
+	</footer>
+
+<p style="font-size:14px;">Klik untuk lihat gambar 📸</p>
+
+
+	<script>
+document.querySelector('.friends-container').addEventListener('click', function () {
+    this.classList.toggle('active');
+});
+</script>
+
+
+</body>
+</html> 

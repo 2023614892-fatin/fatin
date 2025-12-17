@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel= "stylesheet" href="style.css">
+	<title>Education</title>
+</head>
+<style>
+	.edu-horizontal {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.timeline-title {
+    background: #ffbfd1;
+    width: fit-content;
+    margin: 0 auto 40px;
+    padding: 15px 35px;
+    border-radius: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #2b3a67;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    animation: fadeIn 1.5s ease;
+}
+
+/* Timeline wrapper */
+.timeline-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+    position: relative;
+    padding: 20px 0;
+}
+
+/* Each item */
+.timeline-item {
+    position: relative;
+    width: 260px;
+    text-align: center;
+    animation: slideUp 1.2s ease;
+}
+
+/* Bubble year */
+.timeline-bubble {
+    background: #ff8fb7;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 2;
+    position: relative;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+/* Hover bubble */
+.timeline-bubble:hover {
+    transform: scale(1.1);
+}
+
+/* Content box */
+.timeline-content {
+    margin-top: 25px;
+    background: #ffe2ec;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    transition: 0.3s ease;
+}
+
+/* Hover effect */
+.timeline-content:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+.timeline-content h3 {
+    color: #2b3a67;
+    margin-bottom: 8px;
+}
+
+.timeline-content p {
+    margin: 5px 0;
+}
+
+.small {
+    font-size: 14px;
+    color: #6d476e;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =======================
+   IMAGE SLIDER POPUP
+======================= */
+
+.slider-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    animation: fadeIn 0.5s ease;
+}
+
+.slider-box {
+    background: #ffe2ec;
+    max-width: 350px;
+    margin: 80px auto;
+    padding: 25px;
+    border-radius: 25px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.slider-box img {
+    width: 100%;
+    border-radius: 15px;
+    display: none;
+}
+
+.slider-box img.active {
+    display: block;
+}
+
+/* Close button */
+.close-slider {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #2b3a67;
+}
+
+/* Navigation buttons */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #ff8fb7;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.slider-btn.prev {
+    left: -15px;
+}
+
+.slider-btn.next {
+    right: -15px;
+}
+
+.timeline-item {
+    cursor: pointer;
+}
+
+nav a {
+    position: relative;
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background: pink;
+    transition: 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+</style> 
+
+<body>
+	<h1><b> Fatin's Personal Website</b></h1>
+
+	<nav>
+		<a href= "index.html">Home</a>
+		<a href= "aboutme.html">About Me</a>
+		<a href= "family.html">Family</a>
+		<a href= "education.html">Education</a>
+		<a href="experience.html">Experience</a>
+		<a href= "friends.html">Friends</a>
+		<a href= "favourites.html">Favourites</a>
+		<a href= "gallery.html"> Gallery</a>
+	</nav>
+
+	<div class="content">
+		<h2>💗 MY EDUCATION JOURNEY 💗</h2> 
+	</div>
+
+    <div class="timeline-wrapper">
+
+        <!-- ITEM 1 -->
+        <div class="timeline-item" onclick="openSlider('degree')">
+            <div class="timeline-bubble">2026–end</div>
+            <div class="timeline-content">
+                <h3>Universiti Teknologi MARA (UiTM)</h3>
+                <p>Degree in Information Management</p>
+                <p class="small">• Hoping for graduate with Honours</p>
+            </div>
+        </div>
+
+        <!-- ITEM 1 -->
+        <div class="timeline-item" onclick="openSlider('diploma')">
+            <div class="timeline-bubble">2023–2026</div>
+            <div class="timeline-content">
+                <h3>Universiti Teknologi MARA (UiTM)</h3>
+                <p>Diploma in Information Management</p>
+                <p class="small">• Current CGPA 3.4</p>
+            </div>
+        </div>
+
+        <!-- ITEM 2 -->
+        <div class="timeline-item"onclick="openSlider('secondary')">
+            <div class="timeline-bubble">2018–2022</div>
+            <div class="timeline-content">
+                <h3>SMK DATO' ISMAIL</h3>
+                <p>SPM Graduate</p>
+                <p class="small">• Active in co-curricular • Get 4A's in SPM </p>
+            </div>
+        </div>
+
+        <!-- ITEM 3 -->
+        <div class="timeline-item"onclick="openSlider('primary')"> 
+            <div class="timeline-bubble">2012–2017</div>
+            <div class="timeline-content">
+                <h3>SK WAKAF RAJA</h3>
+                <p>Primary School</p>
+                <p class="small">• Appointed as the assistant treasurer for the school prefects</p>
+            </div>
+        </div>
+
+    </div>
+
+    
+    <!-- DEGREE SLIDER -->
+<div id="degree" class="slider-modal">
+    <div class="slider-box">
+        <span class="close-slider" onclick="closeSlider('degree')">&times;</span>
+        <img src="images/degree1.jpg" class="active">
+        <img src="images/degree2.jpg">
+        <button class="slider-btn prev" onclick="changeSlide(-1)">❮</button>
+        <button class="slider-btn next" onclick="changeSlide(1)">❯</button>
+    </div>
+</div>
+
+<!-- DIPLOMA SLIDER -->
+<div id="diploma" class="slider-modal">
+    <div class="slider-box">
+        <span class="close-slider" onclick="closeSlider('diploma')">&times;</span>
+        <img src="images/diploma1.jpg" class="active">
+        <img src="images/diploma2.jpg">
+        <button class="slider-btn prev" onclick="changeSlide(-1)">❮</button>
+        <button class="slider-btn next" onclick="changeSlide(1)">❯</button>
+    </div>
+</div>
+
+<!-- SPM SLIDER -->
+<div id="secondary" class="slider-modal">
+    <div class="slider-box">
+        <span class="close-slider" onclick="closeSlider('secondary')">&times;</span>
+        <img src="images/spm1.jpg" class="active">
+        <img src="images/spm2.jpg">
+        <button class="slider-btn prev" onclick="changeSlide(-1)">❮</button>
+        <button class="slider-btn next" onclick="changeSlide(1)">❯</button>
+    </div>
+</div>
+
+<!-- PRIMARY SLIDER -->
+<div id="primary" class="slider-modal">
+    <div class="slider-box">
+        <span class="close-slider" onclick="closeSlider('primary')">&times;</span>
+        <img src="images/primary1.jpg" class="active">
+        <img src="images/primary2.jpg">
+        <button class="slider-btn prev" onclick="changeSlide(-1)">❮</button>
+        <button class="slider-btn next" onclick="changeSlide(1)">❯</button>
+    </div>
+</div>
+
+    <div class="content">
+		<p><em>This section shows my education background in a clear timeline, starting from primary school until my current studies. I studied at SK Wakaf Raja for primary education, where I was appointed as an assistant treasurer. I then continued my secondary education at SMK Dato’ Ismail and graduated with SPM, actively participating in co-curricular activities and achieving 4A’s. After that, I pursued a Diploma in Information Management at Universiti Teknologi MARA (UiTM) from 2023 to 2026 and achieved a current CGPA of 3.4. I am now continuing my Degree in Information Management at UiTM and hope to graduate with honours.</em></p>  
+	</div>
+
+	<footer class="footer"> 
+		<p>&copy; 2025 Designed for educational purposes | Fatin Nabilla Binti Zamri</p>
+	</footer>
+
+    <script>
+let currentIndex = 0;
+
+function openSlider(id) {
+    document.getElementById(id).style.display = "block";
+    currentIndex = 0;
+    showSlide(id);
+}
+
+function closeSlider(id) {
+    document.getElementById(id).style.display = "none";
+}
+
+function changeSlide(n) {
+    const slides = document.querySelectorAll(".slider-box img");
+    slides[currentIndex].classList.remove("active");
+    currentIndex = (currentIndex + n + slides.length) % slides.length;
+    slides[currentIndex].classList.add("active");
+}
+
+function showSlide(id) {
+    const slides = document.querySelectorAll(`#${id} .slider-box img`);
+    slides.forEach(img => img.classList.remove("active"));
+    slides[currentIndex].classList.add("active");
+}
+</script>
+   
+</body>
+</html> 

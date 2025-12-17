@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel= "stylesheet" href="style.css">
+	<title>GALLERY</title>
+</head>
+<style>
+	.gallery-section {
+    width: 90%;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.gallery-block {
+    background: #fadadd;
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 45px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.gallery-block h2 {
+    font-size: 30px;
+    margin-bottom: 25px;
+    color: #2b2b2b;
+    font-weight: bold;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 25px;
+    justify-items: center;
+}
+
+/* POLAROID STYLE */
+.polaroid {
+    width: 180px;
+    background: #e98aa3;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    opacity: 0;
+    animation: fadeInUp 1s forwards;
+
+    /* Untuk flip */
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+
+.polaroid:nth-child(odd) {
+    transform: rotate(2deg);
+}
+
+.polaroid img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.polaroid p {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #333;
+    font-style: italic;
+}
+
+/* HOVER EFFECT */
+.polaroid {
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+
+.polaroid:hover {
+    transform: rotateY(180deg) translateY(-5px);
+}
+
+.polaroid img, 
+.polaroid p {
+    backface-visibility: hidden;
+}
+
+/* FADE IN + FLOATING EFFECT */
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px) rotate(2deg); }
+    100% { opacity: 1; transform: translateY(0) rotate(0deg); }
+} 
+
+nav a {
+    position: relative;
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background: pink;
+    transition: 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+</style> 
+<body>
+	<h1><b> Fatin's Personal Website</b></h1>
+
+	<nav>
+		<a href= "index.html">Home</a>
+		<a href= "aboutme.html">About Me</a>
+		<a href= "family.html">Family</a>
+		<a href= "education.html">Education</a>
+		<a href="experience.html">Experience</a>
+		<a href= "friends.html">Friends</a>
+		<a href= "favourites.html">Favourites</a>
+		<a href= "gallery.html"> Gallery</a>
+	</nav>
+
+	<div class="content">
+		<h2>💗 A GLIMPSE OF MY MOMENTS 💗</h2> 
+	</div>
+
+    <div class="gallery-section">
+
+    <div class="gallery-block">
+        <h2>MELAKA</h2>
+        <div class="gallery-grid">
+            <div class="polaroid"><img src="images/melaka1.jpg"><p>Malacca Market</p></div>
+            <div class="polaroid"><img src="images/melaka2.jpg"><p>Asam Pedas Selera Kampung</p></div>
+            <div class="polaroid"><img src="images/melaka3.jpg"><p>Jonker Walk</p></div>
+            <div class="polaroid"><img src="images/melaka4.jpg"><p>Silverscape Residence</p></div>
+            <div class="polaroid"><img src="images/melaka5.jpg"><p>TamingSari Tower</p></div>
+        </div>
+    </div>
+
+    <div class="gallery-block">
+        <h2>CAMERON HIGHLAND</h2>
+        <div class="gallery-grid">
+            <div class="polaroid"><img src="images/pahang1.jpg"><p>BOH Tea Centre</p></div>
+            <div class="polaroid"><img src="images/pahang2.jpg"><p>Kea Farm</p></div>
+            <div class="polaroid"><img src="images/pahang3.jpg"><p>The Sheep Sanctuary</p></div>
+            <div class="polaroid"><img src="images/pahang4.jpg"><p>Cameron Centrum</p></div>
+            <div class="polaroid"><img src="images/pahang5.jpg"><p>Cameron Adventurous ATV</p></div>
+        </div>
+    </div>
+
+    <div class="gallery-block">
+        <h2>PENANG</h2>
+        <div class="gallery-grid">
+            <div class="polaroid"><img src="images/penang1.jpg"><p>Georgetown</p></div>
+            <div class="polaroid"><img src="images/penang2.jpg"><p>Batu Cafe</p></div>
+            <div class="polaroid"><img src="images/penang3.jpg"><p>Batu Ferringhi Beach</p></div>
+            <div class="polaroid"><img src="images/penang4.jpg"><p>Street Art</p></div>
+            <div class="polaroid"><img src="images/penang5.jpg"><p>Sunway Carnival Mall</p></div>    
+        </div>
+    </div>
+
+    <div class="gallery-block">
+        <h2>NEGERI SEMBILAN</h2>
+        <div class="gallery-grid">
+            <div class="polaroid"><img src="images/ns1.jpg"><p>Sri Sendayan Mosque</p></div>
+            <div class="polaroid"><img src="images/ns2.jpg"><p>Nilai</p></div>
+            <div class="polaroid"><img src="images/ns3.jpg"><p>Port Dickson</p></div>
+            <div class="polaroid"><img src="images/ns4.jpg"><p>Teluk Kemang Beach</p></div>
+            <div class="polaroid"><img src="images/ns5.jpg"><p>Lomak Salai</p></div>
+        </div>
+    </div>
+
+    <div class="gallery-block">
+        <h2>KUALA LUMPUR</h2>
+        <div class="gallery-grid">
+            <div class="polaroid"><img src="images/kl1.jpg"><p>Putrajaya Mosque</p></div>
+            <div class="polaroid"><img src="images/kl2.jpg"><p>IOI City Mall</p></div>
+            <div class="polaroid"><img src="images/kl3.jpg"><p>Putrajaya</p></div>
+            <div class="polaroid"><img src="images/kl4.jpg"><p>Danau Kota</p></div>
+            <div class="polaroid"><img src="images/kl5.jpg"><p>Kuala Lumpur Square</p></div>
+        </div>
+    </div>
+
+    <div class="gallery-block">
+        <h2>GENTING HIGHLAND</h2>
+        <div class="gallery-grid">
+            <div class="polaroid"><img src="images/genting1.jpg"><p>Resorts World Genting</p></div>
+            <div class="polaroid"><img src="images/genting2.jpg"><p>Janda Baik</p></div>
+            <div class="polaroid"><img src="images/genting3.jpg"><p>With Bella&Ecah</p></div>
+            <div class="polaroid"><img src="images/genting4.jpg"><p>OOTD</p></div>
+            <div class="polaroid"><img src="images/genting5.jpg"><p>Premium Outlet</p></div>
+        </div>
+    </div>
+
+    <div class="gallery-block">
+        <h2>TERENGGANU</h2>
+        <div class="gallery-grid">
+            <div class="polaroid"><img src="images/ganu1.jpg"><p>Pulau Ranggut</p></div>
+            <div class="polaroid"><img src="images/ganu2.jpg"><p>BBQ Time</p></div>
+            <div class="polaroid"><img src="images/ganu3.jpg"><p>Mayang Mall</p></div>
+            <div class="polaroid"><img src="images/ganu4.jpg"><p>Marang</p></div>
+            <div class="polaroid"><img src="images/ganu5.jpg"><p>Kampung Cina</p></div>
+        </div>
+    </div>
+
+    <div class="gallery-block">
+        <h2>SIBLINGS</h2>
+        <div class="gallery-grid">
+            <div class="polaroid"><img src="images/sibling1.jpg"><p>Selfie's</p></div>
+            <div class="polaroid"><img src="images/sibling2.jpg"><p>Siblings Potrait</p></div>
+            <div class="polaroid"><img src="images/sibling3.jpg"><p>One and Only Sister</p></div>
+            <div class="polaroid"><img src="images/sibling4.jpg"><p>Mirror with Duos</p></div>
+            <div class="polaroid"><img src="images/sibling5.jpg"><p>Second Brother</p></div>
+        </div>
+    </div>
+
+    <div class="gallery-block">
+        <h2>COUSINS</h2>
+        <div class="gallery-grid">
+            <div class="polaroid"><img src="images/csn1.jpg"><p>Cousins Potrait</p></div>
+            <div class="polaroid"><img src="images/csn2.jpg"><p>With Amalia's</p></div>
+            <div class="polaroid"><img src="images/csn3.jpg"><p>With Auni's</p></div>
+            <div class="polaroid"><img src="images/csn4.jpg"><p>With Nurul and Yaa</p></div>
+            <div class="polaroid"><img src="images/csn5.jpg"><p>With Ariana's</p></div>
+        </div>
+    </div>
+
+    <div class="gallery-block">
+        <h2>CAFE HUNTING</h2>
+        <div class="gallery-grid">
+            <div class="polaroid"><img src="images/cafe1.jpg"><p>Senja Cafe</p></div>
+            <div class="polaroid"><img src="images/cafe2.jpg"><p>Batu Cafe,Penang</p></div>
+            <div class="polaroid"><img src="images/cafe3.jpg"><p>Coffee Brew</p></div>
+            <div class="polaroid"><img src="images/cafe4.jpg"><p>SupoDiyo Cafe</p></div>
+            <div class="polaroid"><img src="images/cafe5.jpg"><p>The Layers Cafe</p></div>
+        </div>
+    </div>
+</div>
+
+	<footer class="footer"> 
+		<p>&copy; 2025 Designed for educational purposes | Fatin Nabilla Binti Zamri</p>
+	</footer>
+</body>
+</html> 
